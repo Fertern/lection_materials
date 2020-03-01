@@ -6,7 +6,9 @@ const ComponentWillUnmountExample = () => {
       console.log("Component is dead((9")
     };
   }, []);
-  return <div>ComponentWillUnmount in useEffect()</div>;
+  
+  return <div>ComponentWillUnmount with useEffect</div>;
 }
 
 export default ComponentWillUnmountExample;
+
