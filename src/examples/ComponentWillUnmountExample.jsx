@@ -1,14 +1,13 @@
-import React, { useEffect } from 'react';
+import React, { useEffect } from "react";
 
 const ComponentWillUnmountExample = () => {
   useEffect(() => {
     return () => {
-      console.log("Component is dead((9")
+      console.log("Component is dead((9");
     };
   }, []);
-  
+
   return <div>ComponentWillUnmount with useEffect</div>;
-}
+};
 
 export default ComponentWillUnmountExample;
-

@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import MenuItem from "@material-ui/core/MenuItem";
 import Select from "@material-ui/core/Select";
-import InputLabel from "@material-ui/core/InputLabel";
-import FormHelperText from "@material-ui/core/FormHelperText";
 import "./index.css";
 import ProfilePageFunc from "./components/Function";
 import ProfilePageClass from "./components/DefaultClass";
@@ -15,12 +13,15 @@ import {
   CircularProgress,
   Button
 } from "@material-ui/core";
-import ConstructorIsUseless from "./slides/ConstructorIsUseless";
 import VisibilityIcon from "@material-ui/icons/Visibility";
+import ComboLifeCycles from "./examples/ComboLifeCycles";
+import ComboLifeCyclesClass from "./examples/classic/ComboLifeCycles";
+import BuildIcon from "@material-ui/icons/Build";
 
 const App = () => {
   const [user, setUser] = useState("Tachanka");
   const [isSecretMode, setSecretMode] = useState(false);
+  const [isTestMode, setTestMode] = useState(false);
   const [isFetching, setFetching] = useState(false);
 
   return (
@@ -64,8 +65,7 @@ const App = () => {
           <div
             style={{
               display: "flex",
-              alignItems: "center",
-              flexDirection: "column"
+              alignItems: "center"
             }}
           >
             <Button
@@ -76,9 +76,36 @@ const App = () => {
             >
               Show secret
             </Button>
+            {!isTestMode && (
+              <Button
+                style={{ margin: "0 auto" }}
+                startIcon={<BuildIcon />}
+                onClick={() => setTestMode(true)}
+                variant="outlined"
+              >
+                Show test field
+              </Button>
+            )}
           </div>
         )}
       </CardContent>
+
+      {isTestMode && !isSecretMode && (
+        <article
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            flexDirection: "column"
+          }}
+        >
+          <Button variant="outlined">
+            <ComboLifeCycles />
+          </Button>
+          <Button variant="outlined">
+            <ComboLifeCyclesClass />
+          </Button>
+        </article>
+      )}
     </Card>
   );
 };
