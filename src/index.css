@@ -12,3 +12,6 @@ p > span {
 article > button {
   margin-bottom: 40px !important;
 }
+article > h3 {
+  text-align: center;
+}

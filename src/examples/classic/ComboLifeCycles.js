@@ -5,10 +5,10 @@ class ComboLifeCyclesClass extends Component {
     clicks: 0
   };
   componentDidMount() {
-    console.log("Class SUBSCRIBE (Mounted)");
+    console.log("Class SUBSCRIBE! (Mounted)");
   }
   componentDidUpdate() {
-    console.log("Class fix subscribe! (Updated)");
+    console.log("Class updated! (Updated)");
   }
   componentWillUnmount() {
     console.log("Class UNSUBSCRIBE! (Unmounted)");
@@ -17,11 +17,17 @@ class ComboLifeCyclesClass extends Component {
     const { clicks } = this.state;
 
     return (
-      <div onClick={() => this.setState({ clicks: clicks + 1 })}>
-        Clicks: {clicks}
-      </div>
+      <>
+        <div onClick={() => this.setState({ clicks: clicks + 1 })}>
+          Clicks: {clicks}
+        </div>
+      </>
     );
   }
 }
 
 export default ComboLifeCyclesClass;
+
+
+// const { someProp } = this.props;
+// <div>{someProp}</div> 

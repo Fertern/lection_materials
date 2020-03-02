@@ -49,16 +49,22 @@ const App = () => {
           </div>
         )}
         <p>
-          <ProfilePageFunc user={user} callback={setFetching} />
+          <Button variant="contained">
+            <ProfilePageFunc user={user} callback={setFetching} />
+          </Button>
           <span>With function component</span>
         </p>
         <p>
-          <ProfilePageClass user={user} callback={setFetching} />
+          <Button variant="contained">
+            <ProfilePageClass user={user} callback={setFetching} />
+          </Button>
           <span>With class component</span>
         </p>
         {isSecretMode ? (
           <p>
-            <ProfilePageRender user={user} callback={setFetching} />
+            <Button variant="contained">
+              <ProfilePageRender user={user} callback={setFetching} />
+            </Button>
             <span>With special class component</span>
           </p>
         ) : (
@@ -98,11 +104,14 @@ const App = () => {
             flexDirection: "column"
           }}
         >
+          <h3>Function component</h3>
           <Button variant="outlined">
             <ComboLifeCycles />
           </Button>
+          <h3>Class component</h3>
           <Button variant="outlined">
             <ComboLifeCyclesClass />
+            {/* someProp='Пропсы прокидываются без конструктора!' */}
           </Button>
         </article>
       )}
