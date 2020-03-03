@@ -3,15 +3,15 @@ import React, { useState, useEffect } from "react";
 const ComboLifeCycles = () => {
   const [clicks, setClicks] = useState(0);
   const [checkVariable, setCheckVariable] = useState(1);
-  useEffect(() => {
-    console.log("Function component updated! (Updated)");
-  }, [clicks]);
+  // useEffect(() => {
+  //   console.log("Function component updated! (Updated)");
+  // }, [clicks]);
   useEffect(() => {
     console.log("Function component SUBSCRIBE! (Mounted)");
     return () => {
       console.log("Function component UNSUBSCRIBE! (Unmounted)");
     };
-  }, [checkVariable]);
+  }, []);
   return (
     <div>
       <div onClick={() => setClicks(clicks + 1)}>Clicks: {clicks}</div>

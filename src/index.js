@@ -30,9 +30,8 @@ const App = () => {
         <FormControl>
           <h1 style={{ fontSize: "30px" }}>Choose profile to view:</h1>
           <Select
-            labelId="select-label"
             value={user}
-            onChange={e => setUser(e.target.value)}
+            onChange={event => setUser(event.target.value)}
             style={{ width: "450px" }}
           >
             <MenuItem value="Tachanka">Tachanka</MenuItem>
@@ -95,7 +94,6 @@ const App = () => {
           </div>
         )}
       </CardContent>
-
       {isTestMode && !isSecretMode && (
         <article
           style={{
