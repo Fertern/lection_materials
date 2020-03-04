@@ -3,9 +3,9 @@ import React, { useState, useEffect } from "react";
 const ComboLifeCycles = () => {
   const [clicks, setClicks] = useState(0);
   const [checkVariable, setCheckVariable] = useState(1);
-  // useEffect(() => {
-  //   console.log("Function component updated! (Updated)");
-  // }, [clicks]);
+  useEffect(() => {
+    console.log("Function component updated! (Updated)");
+  });
   useEffect(() => {
     console.log("Function component SUBSCRIBE! (Mounted)");
     return () => {
@@ -42,4 +42,3 @@ export default ComboLifeCycles;
 // };
 
 // export default ComboLifeCycles;
-
